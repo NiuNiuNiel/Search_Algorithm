@@ -41,10 +41,10 @@ class maze_solver():
                     moves.append(possible_moves)
         return moves
 
-    def print_solution(self, print_explred_states = False):
+    def print_solution(self, print_explored_states = False):
         solution_map = list(self.layout)
 
-        if print_explred_states:
+        if print_explored_states:
             for explored_state in self.explored:
                 solution_map[self.point(explored_state)] = "◇"
 
@@ -121,7 +121,7 @@ class stackfrontier():
         self.frontier.remove(A_star_node)
         return A_star_node
 
-solver = maze_solver("Maze/Maze_3.txt", "GBFS")
+solver = maze_solver("Maze/Maze_2.txt", "GBFS")
 start = perf_counter()
 solver.solve()
 print("Time Taken: ", perf_counter() - start, "seconds")
